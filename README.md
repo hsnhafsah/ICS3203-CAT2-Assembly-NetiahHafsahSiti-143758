@@ -1,9 +1,27 @@
 # ICS3203-CAT2-Assembly-NetiahHafsahSiti-143758
 
-### 1. **Number Classifier (number_classifier.asm)**
+# 1. **Number Classifier Program (number_classifier.asm)**
 
 - **Purpose**: This program classifies a user-input number as **POSITIVE**, **NEGATIVE**, or **ZERO** using control flow and conditional jumps.
 - **Description**: The program prompts the user for an input number, and then it uses conditional jumps (`jg`, `jl`, and `jmp`) to classify the number and print the corresponding message. It demonstrates the use of conditional and unconditional jumps in assembly.
+  
+## How to Compile and Run
+1. **Assemble the program using the following command:**
+
+    ```bash
+   nasm -f elf64 number_classifier.asm -o number_classifier.o
+   ```
+2. **Link the object file:**
+
+   ```bash
+   ld -s -o number_classifier number_classifier.o
+   ```
+3. **Run the Program:**
+   ```bash
+   ./number_classifier
+   ```
+   
+
 
 ### 2. **Array Manipulation and Reversal**
 
