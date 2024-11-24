@@ -100,7 +100,10 @@ print_array:
     mov r12, 0
 
 ; CHALLENGES WITH HANDLING MEMORY DIRECTLY
-
+; - I needed to ensure that the left and right pointers were aligned correctly during the reversal to prevent data corruption.
+; - Since assembly doesn’t check bounds, I had to manually ensure that I stayed within the array size to avoid errors.
+; - I had to ensure that I swapped the elements in place without overwriting memory before completing the swap.
+; - I had to ensure the buffer doesn’t overflow by carefully managing the number of input elements.
 
 print_loop:
     mov al, [array + r12]   ; Load each character from the array
