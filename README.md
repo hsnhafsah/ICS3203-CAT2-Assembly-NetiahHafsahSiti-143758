@@ -1,6 +1,6 @@
 # ICS3203-CAT2-Assembly-NetiahHafsahSiti-143758
 
-# 1. **Number Classifier Program (number_classifier.asm)**
+# 1. Number Classifier Program (number_classifier.asm)
 
 - **Purpose**: This program classifies a user-input number as **POSITIVE**, **NEGATIVE**, or **ZERO** using control flow and conditional jumps.
 - **Description**: The program prompts the user for an input number, and then it uses conditional jumps (`jg`, `jl`, and `jmp`) to classify the number and print the corresponding message. It demonstrates the use of conditional and unconditional jumps in assembly.
