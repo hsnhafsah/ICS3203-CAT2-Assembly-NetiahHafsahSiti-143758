@@ -1,5 +1,13 @@
 # ICS3203-CAT2-Assembly-NetiahHafsahSiti-143758
 
+## Tools Required to Assemble and Run My Code
+Use the commands below to install the necessary tools
+ ```bash
+sudo apt update
+sudo apt install nasm
+sudo apt install gcc
+   ```
+
 # TASK 1 - Number Classifier Program 
 ## Overview
 
@@ -7,8 +15,9 @@
 - **Description**: The program prompts the user for an input number, and then it uses conditional jumps (`jg`, `jl`, and `jmp`) to classify the number and print the corresponding message. It demonstrates the use of conditional and unconditional jumps in assembly.
   
 ## Compiling and Running Task 1
-1. **Assemble the program using the following command:**
 
+1. **Assemble the program using the following command:**
+   
     ```bash
    nasm -f elf64 number_classifier.asm -o number_classifier.o
    ```
@@ -81,6 +90,21 @@ reverse_loop:
 ```
 The loop compares the indices `r12` and `r13` to check if they should continue swapping. Each iteration swaps a pair of elements and moves the indices closer to the center (`r12` increments, `r13` decrements). The loop ends when all elements are reversed, signaled by the condition `jge print_array`.
 
+## Compiling and Running Task 2
+1. **Assemble the program using the following command:**
+
+    ```bash
+   nasm -f elf64 -o reverse_array.o reverse_array.asm
+   ```
+2. **Link the object file:**
+
+   ```bash
+   ld -s -o reverse_array reverse_array.o
+   ```
+3. **Run the Program:**
+   ```bash
+   ./reverse_array
+   ```
 
 
 
