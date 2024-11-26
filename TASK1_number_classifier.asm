@@ -17,17 +17,20 @@
 
 section .bss
     user_input resb 10      ; Reserve space for user input (maximum 10 bytes)
+
 section .data
     prompt db "Enter a number: ", 0  
+    invalid_msg db "Invalid input. Please enter a number.", 0
     pos_msg db "POSITIVE", 0         ; Positive message
     neg_msg db "NEGATIVE", 0         ; Negative message
-    zero_msg db "ZERO", 0           ; Zero message
-    newline db 0x0A, 0              ; Newline character
+    zero_msg db "ZERO", 0            ; Zero message
+    newline db 0x0A, 0               ; Newline character
 
 section .text
     global _start
 
 _start:
+input_loop:
     ; Print the prompt asking the user for input
     mov rax, 1            ; syscall for sys_write (1)
     mov rdi, 1            ; file descriptor 1 (stdout)
@@ -42,15 +45,21 @@ _start:
     mov rdx, 10           ; max input length
     syscall               
 
-    ; Convert the input from ASCII to integer
+    ; Validate input (ensure it is a digit or a valid number)
     movzx rax, byte [user_input]  ; Load the input byte into rax (ASCII value)
-    sub rax, '0'                ; Convert ASCII value to integer
+    cmp rax, '0'                  ; Check if the input is less than '0'
+    jl invalid_input              ; If true, it is invalid
+    cmp rax, '9'                  ; Check if the input is greater than '9'
+    jg invalid_input              ; If true, it is invalid
+
+    ; Convert the input from ASCII to integer
+    sub rax, '0'                  ; Convert ASCII value to integer
 
     ; Compare the number to classify it
-    cmp rax, 0            ; Compare the number with 0
-    je zero_case          ; Jump to zero_case if the number is 0 (je = jump if equal)
-    jg positive_case     ; Jump to positive_case if the number is greater than 0 (jg = jump if greater)
-    jl negative_case     ; Jump to negative_case if the number is less than 0 (jl = jump if less)
+    cmp rax, 0                    ; Compare the number with 0
+    je zero_case                  ; Jump to zero_case if the number is 0 (je = jump if equal)
+    jg positive_case              ; Jump to positive_case if the number is greater than 0 (jg = jump if greater)
+    jl negative_case              ; Jump to negative_case if the number is less than 0 (jl = jump if less)
 
 positive_case:
     ; Print "POSITIVE"
@@ -59,7 +68,7 @@ positive_case:
     mov rsi, pos_msg      ; message to print
     mov rdx, 8            ; message length
     syscall               
- ; Print newline
+    ; Print newline
     mov rax, 1
     mov rdi, 1
     mov rsi, newline     
@@ -95,10 +104,25 @@ zero_case:
     mov rsi, newline     
     mov rdx, 1            
     syscall
+    jmp done              ; Jump to done to exit the program
+
+invalid_input:
+    ; Print "Invalid input. Please enter a number."
+    mov rax, 1            
+    mov rdi, 1            
+    mov rsi, invalid_msg  
+    mov rdx, 38           ; message length
+    syscall               
+    ; Print newline
+    mov rax, 1
+    mov rdi, 1
+    mov rsi, newline     
+    mov rdx, 1            
+    syscall
+    jmp input_loop         ; Go back to prompt for input again
 
 done:
     ; Exit the program
     mov rax, 60           ; syscall for sys_exit (60)
     xor rdi, rdi          ; exit code 0
-    syscall              
-
+    syscall               
