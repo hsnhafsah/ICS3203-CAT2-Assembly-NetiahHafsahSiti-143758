@@ -35,6 +35,8 @@ cd ICS3203-CAT2-Assembly-NetiahHafsahSiti-143758
    ```bash
    ./TASK1_number_classifier
    ```
+
+## Insights and Challenges
    
 # TASK 2 - Array Manipulation with Looping and Reversal Program
 ## Overview
@@ -55,7 +57,6 @@ This program accepts five single-digit numbers from the user, stores them in an 
    ```bash
    ./TASK2_reverse_array
    ```
-
 
 ## Requirements Met
 ### 1. **Avoid Using Additional Memory to Store the Reversed Array:**
@@ -112,10 +113,12 @@ reverse_loop:
 ```
 The loop compares the indices `r12` and `r13` to check if they should continue swapping. Each iteration swaps a pair of elements and moves the indices closer to the center (`r12` increments, `r13` decrements). The loop ends when all elements are reversed, signaled by the condition `jge print_array`.
 
+## Insights and Challenges
 
 
 
-# TASK 3 - Factorial Calculator
+
+# TASK 3 - Factorial Calculator Program
 ## Overview
 This program calculates the factorial of a number entered by the user. It demonstrates modular programming by using subroutines for factorial calculation and number-to-string conversion. The stack is utilized to preserve registers during subroutine calls.
 
@@ -132,9 +135,9 @@ This program calculates the factorial of a number entered by the user. It demons
    ```bash
    ./TASK3_factorial
    ```
+## Insights and Challenges
 
-
-### 4. **Data Monitoring and Control Using Port-Based Simulation**
+# TASK 4 - 
 
 - **Purpose**: Simulates a control system that reads sensor values and controls a motor or triggers an alarm based on the sensor input.
 - **Description**: The program reads a simulated water level sensor value and performs actions such as turning on a motor or triggering an alarm. It demonstrates memory manipulation using ports for monitoring and control purposes.
