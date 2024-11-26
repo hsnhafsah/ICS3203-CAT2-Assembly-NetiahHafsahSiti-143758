@@ -35,6 +35,23 @@ sudo apt install gcc
 ## Overview
 This program accepts five single-digit numbers from the user, stores them in an array, and reverses the array in place using a two-pointer technique. The reversed digits are then printed to the screen. The program ensures that the user input is validated to only allow digits between 0 and 9, and does not use any additional memory to store the reversed array.
 
+## Compiling and Running Task 2
+1. **Assemble the program using the following command:**
+
+    ```bash
+   nasm -f elf64 -o TASK2_reverse_array.o TASK2_reverse_array.asm
+   ```
+2. **Link the object file:**
+
+   ```bash
+   ld -s -o TASK2_reverse_array TASK2_reverse_array.o
+   ```
+3. **Run the Program:**
+   ```bash
+   ./TASK2_reverse_array
+   ```
+
+
 ## Requirements Met
 ### 1. **Avoid Using Additional Memory to Store the Reversed Array:**
 The code avoids using additional memory to store the reversed array by reversing the array in place. This is done by swapping elements within the same array buffer. No extra array or buffer is created for storing the reversed sequence.
@@ -90,21 +107,6 @@ reverse_loop:
 ```
 The loop compares the indices `r12` and `r13` to check if they should continue swapping. Each iteration swaps a pair of elements and moves the indices closer to the center (`r12` increments, `r13` decrements). The loop ends when all elements are reversed, signaled by the condition `jge print_array`.
 
-## Compiling and Running Task 2
-1. **Assemble the program using the following command:**
-
-    ```bash
-   nasm -f elf64 -o reverse_array.o reverse_array.asm
-   ```
-2. **Link the object file:**
-
-   ```bash
-   ld -s -o reverse_array reverse_array.o
-   ```
-3. **Run the Program:**
-   ```bash
-   ./reverse_array
-   ```
 
 
 
