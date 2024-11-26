@@ -36,7 +36,22 @@ cd ICS3203-CAT2-Assembly-NetiahHafsahSiti-143758
    ./TASK1_number_classifier
    ```
 
-## Insights and Challenges
+## Challenges
+1. **Handling Negative Numbers:** Initially, negative numbers were incorrectly classified as positive. I fixed this by adjusting the conversion logic to properly detect and apply the negative sign when parsing the input.
+
+2. **Converting Input to Integer:** Converting the input string to an integer was tricky. I had to manually check each character to build the integer, which I resolved by improving the string-to-integer conversion.
+
+3. **Invalid Input Handling:** The program needed to handle non-numeric inputs. I added checks to detect invalid characters and prompt the user to re-enter a valid number.
+
+4. **Program Flow Control:** I had issues with the program not jumping to the correct sections for positive, negative, or zero numbers. I fixed this by refining the conditional jumps based on the converted value.
+
+## Insights
+1. **Assembly Requires Attention to Detail:**  This task taught me how much attention to detail is needed when working in assembly language. Unlike higher-level programming languages, every small step—such as handling each byte of data and performing manual checks—requires careful consideration.
+   
+2. **Input Validation is Key:** The process made me realize how critical input validation is, especially when you're dealing with raw data like strings. Without proper validation, even a small mistake (like entering a letter instead of a number) can lead to errors or unexpected behavior.
+   
+3. **Debugging is Harder in Assembly:** Debugging assembly code requires manually stepping through the logic, which taught me a lot about problem-solving.
+
    
 # TASK 2 - Array Manipulation with Looping and Reversal Program
 ## Overview
