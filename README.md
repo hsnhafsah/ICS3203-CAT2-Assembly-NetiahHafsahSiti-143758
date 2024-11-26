@@ -137,9 +137,40 @@ This program calculates the factorial of a number entered by the user. It demons
    ```
 ## Insights and Challenges
 
-# TASK 4 - 
+# TASK 4 - Water Level Control System Program
+## Overview
 
-- **Purpose**: Simulates a control system that reads sensor values and controls a motor or triggers an alarm based on the sensor input.
-- **Description**: The program reads a simulated water level sensor value and performs actions such as turning on a motor or triggering an alarm. It demonstrates memory manipulation using ports for monitoring and control purposes.
+This program simulates a water level control system, where a sensor value is input by the user to represent the current water level. Based on this sensor value, the system takes different actions:
 
-# ICS3203-CAT2-Assembly-NetiahHafsahSiti-143758
+1. **Low Water Level (< 5):** The motor turns ON, and no alarm is triggered.
+2. **Moderate Water Level (5-10):** The motor remains OFF, and no alarm is triggered, since the water level is moderate.
+3. **High Water Level (10 - 99):** The motor stays OFF, and an alarm is triggered.
+
+The program also ensures that invalid inputs (non-numeric or out-of-range values) are rejected, with an appropriate error message displayed.
+
+## Compiling and Running Task 4
+1. **Assemble the program using the following command:**
+    ```bash
+   nasm -f elf64 TASK4_monitor.asm -o TASK4_monitor.o
+   ```
+2. **Link the object file:**
+   ```bash
+   ld TASK4_monitor.o -o TASK4_monitor
+   ```
+3. **Run the Program:**
+   ```bash
+   ./TASK4_monitor
+   ```
+## Insights and Challenges
+1. **Input Validation**
+One challenge I encountered in this task was ensuring that the user input was correctly validated and converted into an integer. This involved checking the input for invalid characters, such as non-numeric values, and handling inputs that were too long or out of the acceptable range.
+
+2. **Threshold Classification**
+The logic for comparing the sensor value to predefined thresholds (low, moderate, and high) was straightforward. However, I had to ensure that edge cases, such as values exactly at 5 or 10, were handled correctly. To achieve this, I used comparison instructions like cmp and conditional jumps (jl, jg, je).
+
+3. **Output Formatting:**
+Another challenge was managing the output messages effectively. The program needed to display different messages depending on whether the motor was on or off, and whether an alarm was triggered. This involved using jump instructions (jmp) to conditionally print appropriate messages.
+
+4. **Error Handling:**
+The error handling for invalid input was implemented by checking whether the entered characters were numeric and in the appropriate range (0-99). If not, the program would exit after printing an error message. This esures that users cannot enter data that could cause the program to behave unexpectedly.
+
