@@ -109,7 +109,7 @@ invalid_input:
     mov rax, 1            
     mov rdi, 1            
     mov rsi, invalid_msg  
-    mov rdx, 38           ; message length
+    mov rdx, 43           ; message length
     syscall               
     ; Print newline
     mov rax, 1
