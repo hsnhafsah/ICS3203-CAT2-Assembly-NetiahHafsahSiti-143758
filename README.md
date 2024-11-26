@@ -169,7 +169,34 @@ This program calculates the factorial of a number entered by the user. It demons
    ```bash
    ./TASK3_factorial
    ```
-## Insights and Challenges
+## Challenges
+1. **Handling Input and Output:**
+Converting user input (ASCII) into an integer and then converting the factorial result back into a string for display involved multiple conversions.
+
+2. **Error Handling and Edge Cases:**
+Ensuring correct behavior for edge cases like 0! = 1 and 1! = 1 required additional checks within the factorial subroutine.
+
+3. **Stack Management:**
+Mismanagement of the stack (e.g., forgetting to restore registers) caused incorrect outputs and crashes. Debugging these issues required careful review of push and pop pairs.
+
+4. **String Construction in Reverse:**
+Building the number string in reverse order (from least significant digit to most) in number_to_string added complexity.
+
+## Insights
+1. **Importance of Modularity:**
+Modular programming using subroutines (factorial and number_to_string) made the code more structured and easier to debug. Each subroutine had a clear purpose, improving readability and reusability.
+
+2. **Stack Utilization for Context Switching:**
+Proper stack usage enabled seamless transitions between subroutines without impacting global state. This reinforced the importance of saving/restoring registers to maintain program integrity.
+
+3. **Subroutine Reusability:**
+The number_to_string subroutine can be reused in other programs requiring number-to-string conversion, demonstrating the value of designing reusable components.
+
+4. **Edge Case Handling:**
+Addressing edge cases early in the execution flow (e.g., 0! = 1) improved the program’s robustness and reduced unnecessary computations.
+
+5. **Systematic Debugging:**
+Debugging challenges, particularly with register mismanagement or incorrect stack operations, highlighted the value of a systematic approach to analyzing the flow of data through registers and the stack.
 
 # TASK 4 - Water Level Control System Program
 ## Overview
