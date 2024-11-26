@@ -1,12 +1,17 @@
 # ICS3203-CAT2-Assembly-NetiahHafsahSiti-143758
 
-## Tools Required to Assemble and Run My Code
-Use the commands below to install the necessary tools
+## Instructions for Compiling and Running the Code
+1. Use the commands below to install the necessary tools: nasm (assembler) and gcc (C compiler)
  ```bash
 sudo apt update
-sudo apt install nasm
-sudo apt install gcc
+sudo apt install nasm gcc
    ```
+2. Clone the repository:
+ ```bash
+git clone https://github.com/hsnhafsah/ICS3203-CAT2-Assembly NetiahHafsahSiti-143758.git
+cd ICS3203-CAT2-Assembly-NetiahHafsahSiti-143758
+   ```
+   
 
 # TASK 1 - Number Classifier Program 
 ## Overview
@@ -120,18 +125,4 @@ The loop compares the indices `r12` and `r13` to check if they should continue s
 - **Purpose**: Simulates a control system that reads sensor values and controls a motor or triggers an alarm based on the sensor input.
 - **Description**: The program reads a simulated water level sensor value and performs actions such as turning on a motor or triggering an alarm. It demonstrates memory manipulation using ports for monitoring and control purposes.
 
-## Instructions
-
-### Prerequisites
-1. **Assembler**: The program is written in **x86-64 Assembly** and requires an assembler such as `nasm` to assemble the code.
-2. **Linker**: You will need `ld` to link the object files into executables.
-
-### Compiling and Running the Code
-
-To compile and run the code, follow these steps:
-
-1. **Clone the repository**:
-   ```bash
-   git clone https://github.com/hsnhafsah/ICS3203-CAT2-Assembly-NetiahHafsahSiti-143758.git
-   cd ICS3203-CAT2-Assembly-NetiahHafsahSiti-143758
 # ICS3203-CAT2-Assembly-NetiahHafsahSiti-143758
