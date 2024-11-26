@@ -137,13 +137,16 @@ Solution: Incremented the left pointer and decremented the right pointer after e
 Problem: Overwriting one of the values during the swap operation could result in data loss.
 Solution: Utilized registers (al and bl) to temporarily store values from the array during the swap, ensuring data integrity.
 
-3. **Loop Conditions:**
+4. **Loop Conditions:**
 Problem: Creating the correct termination condition for the reversal loop. Errors in this logic led to infinite loops or missed elements.
 Solution: The loop was structured to exit when the pointers (r12 and r13) met or crossed, using cmp r12, r13 followed by the appropriate jump instruction.
 
-4. **Handling User Input:**
+5. **Handling User Input:**
 Problem: Invalid inputs such as characters outside the range '0'-'9' required careful handling to avoid crashes or incorrect behavior.
 Solution: Implemented a validation step that checks if the input is within the ASCII range for digits and provides an error message if not, prompting the user to retry.
+
+6. **Adding Multi-Digit Input Handling:**
+Accepting and processing multi-digit inputs proved especially difficult. I struggled to read the entire input without splitting it incorrectly, which prevented me from properly interpreting multi-digit numbers.
 
 ## Insights
 **In-Place Reversal Logic:**
