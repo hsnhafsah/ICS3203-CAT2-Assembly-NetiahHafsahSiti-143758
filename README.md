@@ -128,7 +128,26 @@ reverse_loop:
 ```
 The loop compares the indices `r12` and `r13` to check if they should continue swapping. Each iteration swaps a pair of elements and moves the indices closer to the center (`r12` increments, `r13` decrements). The loop ends when all elements are reversed, signaled by the condition `jge print_array`.
 
-## Insights and Challenges
+## Challenges
+1. **Managing Pointer Logic:**
+Problem: Ensuring the two pointers (r12 and r13) moved correctly towards the center without skipping or repeating elements.
+Solution: Incremented the left pointer and decremented the right pointer after each swap operation. Ensured the loop exited when the pointers met or crossed.
+
+2. **Avoiding Overwriting During Swaps:**
+Problem: Overwriting one of the values during the swap operation could result in data loss.
+Solution: Utilized registers (al and bl) to temporarily store values from the array during the swap, ensuring data integrity.
+
+3. **Loop Conditions:**
+Problem: Creating the correct termination condition for the reversal loop. Errors in this logic led to infinite loops or missed elements.
+Solution: The loop was structured to exit when the pointers (r12 and r13) met or crossed, using cmp r12, r13 followed by the appropriate jump instruction.
+
+4. **Handling User Input:**
+Problem: Invalid inputs such as characters outside the range '0'-'9' required careful handling to avoid crashes or incorrect behavior.
+Solution: Implemented a validation step that checks if the input is within the ASCII range for digits and provides an error message if not, prompting the user to retry.
+
+## Insights
+**In-Place Reversal Logic:**
+Using two pointers (one starting at the beginning and the other at the end of the array) is an efficient and memory-saving approach for reversing an array. This method ensures that no additional memory is used while adhering to the requirement of in-place operations.
 
 
 
