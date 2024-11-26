@@ -19,16 +19,16 @@ sudo apt install gcc
 1. **Assemble the program using the following command:**
    
     ```bash
-   nasm -f elf64 number_classifier.asm -o number_classifier.o
+    nasm -f elf64 TASK1_number_classifier.asm -o TASK1_number_classifier.o
    ```
 2. **Link the object file:**
 
    ```bash
-   ld -s -o number_classifier number_classifier.o
+   ld TASK1_number_classifier.o -o TASK1_number_classifier
    ```
 3. **Run the Program:**
    ```bash
-   ./number_classifier
+   ./TASK1_number_classifier
    ```
    
 # TASK 2 - Array Manipulation with Looping and Reversal Program
