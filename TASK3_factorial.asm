@@ -1,4 +1,4 @@
-; TASK 4
+; TASK 3
 
 ; Program: Factorial Calculator
 ; Description: This program calculates the factorial of a number entered by the user.
@@ -29,10 +29,6 @@
 ;    - Preserved Registers: `rax`, `rbx`, `rcx`, `rdx`, `rsi`
 ;    - The program pushes these registers onto the stack at the start and pops them before returning the subroutine to the caller.
 ;    - Uses `rsi` to build the string representation of the number.
-
-; Stack Usage:
-; - The stack is used to preserve register values across subroutine calls.
-; - The factorial result is then temporarily stored on the stack before being processed by the`number_to_string` subroutine.
 
 
 section .data
