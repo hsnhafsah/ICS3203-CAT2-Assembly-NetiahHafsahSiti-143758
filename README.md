@@ -49,7 +49,7 @@ This program accepts five single-digit numbers from the user, stores them in an 
 2. **Link the object file:**
 
    ```bash
-   ld -s -o TASK2_reverse_array TASK2_reverse_array.o
+   ld TASK2_reverse_array.o -o TASK2_reverse_array
    ```
 3. **Run the Program:**
    ```bash
@@ -115,10 +115,24 @@ The loop compares the indices `r12` and `r13` to check if they should continue s
 
 
 
-### 3. **Factorial Calculation (factorial.asm)**
+# TASK 3 - Factorial Calculator
+## Overview
+This program calculates the factorial of a number entered by the user. It demonstrates modular programming by using subroutines for factorial calculation and number-to-string conversion. The stack is utilized to preserve registers during subroutine calls.
 
-- **Purpose**: Computes the factorial of a number using a subroutine.
-- **Description**: The program calculates the factorial of a given number by calling a subroutine that performs the recursive calculation. It also demonstrates stack management by saving and restoring registers during the recursive calls.
+## Compiling and Running Task 3
+1. **Assemble the program using the following command:**
+    ```bash
+   nasm -f elf64 TASK3_factorial.asm -o TASK3_factorial.o
+   ```
+2. **Link the object file:**
+   ```bash
+   ld TASK3_factorial.o -o TASK3_factorial
+   ```
+3. **Run the Program:**
+   ```bash
+   ./TASK3_factorial
+   ```
+
 
 ### 4. **Data Monitoring and Control Using Port-Based Simulation**
 
